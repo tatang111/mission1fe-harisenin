@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+}
+
+.bluestar:hover i {
+    color: #1d4ed8;
+}
+
+.hero-image {
+    filter: brightness(0.7);
+    transition: transform .5 ease;
+}
+
+:root {
+    --bg-color: #000000;
+    --text-color: #FFFFFF;
+    --accent-gold: #D4AF37;
+    --button-hover: #BC6C25;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @media (orientation: landscape) {
+    .video-controls {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  .forbglayar {
+    object-fit: cover;
+    background-position: center;
+    background-size: cover; 
+}
+@media screen and (max-width: 576px) {
+    .forbglayar {
+    }
+}
