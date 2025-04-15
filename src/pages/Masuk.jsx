@@ -13,7 +13,7 @@ export const Masuk = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleMasukClick = (e) => {
     e.preventDefault();
@@ -23,96 +23,87 @@ export const Masuk = () => {
     if (infoUser.username !== username || infoUser.password !== password) {
       setUsername("");
       setPassword("");
-      setError("Username Atau Password Salah!")
+      setError("Username Atau Password Salah!");
       return;
     }
 
-    navigate("/beranda")
+    navigate("/beranda");
   };
 
   return (
-    <div className="forbglayar bg-[url(/auth/daftar.jpg)] flex justify-center pt-[1px] relative md:items-center h-screen">
+    <div className="bg-[url(/auth/daftar.jpg)] bg-cover bg-center flex justify-center items-start md:items-center min-h-screen p-4">
       <form
-        onSubmit={(e) => handleMasukClick(e)}
-        className="forForm w-90/100 max-w-[420px] overflow-y-hidden mt-[80px] md:mt-[0px] border border-[gray] md:h-89/100 h-60/100 top-20 relative p-[40px] pt-[28px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white"
+        onSubmit={handleMasukClick}
+        className="w-full max-w-[420px] border border-gray-600 p-6 md:p-10 flex flex-col gap-4 rounded-md bg-[#181A1CD6] text-white"
       >
-        <h1 className="text-center flex justify-center gap-1 text-4xl font-[700]">
-          <FontAwesomeIcon icon={faFilm} />
-          <span className="-pb-4 flex items-center -mt-1">CHILL</span>
-        </h1>
-
         <div className="text-center">
-          <h1 className="text-2xl font-[650]">Masuk</h1>
-          <h1>Selamat datang kembali!</h1>
+          <h1 className="text-3xl md:text-4xl font-bold flex justify-center items-center gap-2">
+            <FontAwesomeIcon icon={faFilm} />
+            <span>CHILL</span>
+          </h1>
         </div>
-
-        <div className="username">
-          <label className="flex gap-2 flex-col">
-            <div className="flex gap-2">
-              <span>Username</span>
-              <span className="text-red-500 ">{error}</span>
+        <div className="text-center">
+          <h1 className="text-xl md:text-2xl font-semibold">Masuk</h1>
+          <p className="text-sm md:text-base">Selamat datang kembali!</p>
+        </div>
+        <div>
+          <label className="flex flex-col gap-1">
+            <div className="flex items-center gap-2">
+              <span className="text-sm md:text-base">Username</span>
+              {error && (
+                <span className="text-red-500 text-xs md:text-sm">{error}</span>
+              )}
             </div>
-
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Masukkan username"
-              type="text"
-              className="p-[10px] border-[gray] border-[2px] rounded-full bg-transparent"
+              className="w-full p-2 md:p-3 border border-gray-500 rounded-full bg-transparent text-sm md:text-base"
             />
           </label>
         </div>
-
-        <div className="username">
-          <label className="flex gap-2 flex-col relative">
-            Kata Sandi
+        <div>
+          <label className="flex flex-col gap-1 relative">
+            <span className="text-sm md:text-base">Kata Sandi</span>
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Masukkan kata sandi"
               type={showPassword ? "text" : "password"}
-              className="p-[10px] border-[gray] border-[2px] rounded-full bg-transparent"
+              className="w-full p-2 md:p-3 border border-gray-500 rounded-full bg-transparent text-sm md:text-base"
             />
             <FontAwesomeIcon
               icon={showPassword ? faEyeSlash : faEye}
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 cursor-pointer top-12"
+              className="absolute right-3 top-9 md:top-10 cursor-pointer text-gray-400"
             />
           </label>
         </div>
-
-        <div className="flex justify-between relative md:text-md text-sm -mt-[14px] mb-4">
-          <h1>
+        <div className="flex justify-between text-xs md:text-sm -mt-2 mb-2">
+          <p>
             Belum punya akun?{" "}
-            <Link
-              to="/daftar"
-              className="font-bold cursor-pointer hover:underline"
-            >
+            <Link to="/daftar" className="font-semibold hover:underline">
               Daftar
             </Link>
-          </h1>
-          <h1 className="font-[600] hover:underline cursor-pointer">
+          </p>
+          <button className="font-semibold hover:underline">
             Lupa kata sandi?
-          </h1>
+          </button>
         </div>
-
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <button
             type="submit"
-            onClick={(e) => handleMasukClick(e)}
-            className="p-[6px] border-white w-full rounded-full cursor-pointer hover:underline bg-[gray]"
+            className="w-full py-2 bg-gray-600 hover:bg-gray-700 rounded-full text-sm md:text-base"
           >
             Masuk
           </button>
-          <h1
-            style={{ lineHeight: "14px" }}
-            className="text-[gray] text-sm text-center"
+          <p className="text-center text-gray-400 text-xs">Atau</p>
+          <button
+            type="button"
+            className="w-full py-2 border border-gray-400 hover:bg-gray-800 rounded-full flex items-center justify-center gap-2 text-sm md:text-base"
           >
-            Atau
-          </h1>
-          <button className="border-2 p-[6px] border-white w-full rounded-full cursor-pointer hover:underline">
-            <FontAwesomeIcon icon={faGoogle} className="text-red-500 mr-2" />
-            Masuk dengan Google
+            <FontAwesomeIcon icon={faGoogle} className="text-red-500" />
+            <span>Masuk dengan Google</span>
           </button>
         </div>
       </form>

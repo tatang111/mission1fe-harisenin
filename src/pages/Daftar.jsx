@@ -11,13 +11,13 @@ export const Daftar = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const confirmPasswordRef = useRef(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleDaftarClick = (e) => {
     e.preventDefault();
 
     if (!username || !password || !passwordConfirm) {
-        return;
+      return;
     }
 
     if (passwordConfirm !== password) {
@@ -26,103 +26,97 @@ export const Daftar = () => {
       confirmPasswordRef.current.focus();
       return;
     }
-    
+
     const userIdentity = {
-        username: username,
-        password: password,
+      username: username,
+      password: password,
     };
     localStorage.setItem("infoUser", JSON.stringify(userIdentity));
-    navigate("/masuk")
+    navigate("/masuk");
   };
 
   return (
-    <div className="forbglayar bg-[url(/auth/daftar.jpg)] flex justify-center pt-[1px] relative md:items-center h-screen">
-      <form className="forForm w-90/100 max-w-[420px] overflow-y-hidden mt-[50px] md:mt-[0px] border border-gray-500 md:h-98/100 h-67/100 p-[40px] pt-[20px] md:pt-[13px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white top-25 md:top-0 relative">
-        <h1 className="text-center flex justify-center mt-4 gap-1 text-4xl font-bold">
-          <FontAwesomeIcon icon={faFilm} />
-          <span className="-pb-4 flex items-center -mt-1">CHILL</span>
-        </h1>
-
-        <div className="text-center">
-          <h1 className="text-2xl font-semibold">Daftar</h1>
-          <h1>Selamat datang!</h1>
+    <div className="bg-[url(/auth/daftar.jpg)] bg-cover bg-center flex justify-center items-start md:items-center min-h-screen p-4">
+      <form className="w-full max-w-[420px] border border-gray-600 p-6 md:p-10 flex flex-col gap-4 rounded-md bg-[#181A1CD6] text-white">
+        <div className="text-center mt-2 md:mt-0">
+          <h1 className="text-3xl md:text-4xl font-bold flex justify-center items-center gap-2">
+            <FontAwesomeIcon icon={faFilm} />
+            <span>CHILL</span>
+          </h1>
         </div>
-
-        <div className="username">
-          <label className="flex gap-2 flex-col">
-            Username
+        <div className="text-center">
+          <h1 className="text-xl md:text-2xl font-semibold">Daftar</h1>
+          <p className="text-sm md:text-base">Selamat datang!</p>
+        </div>
+        <div>
+          <label className="flex flex-col gap-1">
+            <span className="text-sm md:text-base">Username</span>
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Masukkan username"
-              type="text"
-              className="p-[10px] border-gray-500 border-2 rounded-full bg-transparent"
+              className="w-full p-2 md:p-3 border border-gray-500 rounded-full bg-transparent text-sm md:text-base"
             />
           </label>
         </div>
-
-        <div className="kata-password flex flex-col gap-[15px]">
-          <label className="flex gap-2 flex-col relative">
-            Kata Sandi
+        <div className="flex flex-col gap-4">
+          <label className="flex flex-col gap-1 relative">
+            <span className="text-sm md:text-base">Kata Sandi</span>
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Masukkan kata password"
-              type={`${showPassword ? "text" : "password"}`}
-              className="p-[10px] border-gray-500 border-2 rounded-full bg-transparent"
+              placeholder="Masukkan password"
+              type={showPassword ? "text" : "password"}
+              className="w-full p-2 md:p-3 border border-gray-500 rounded-full bg-transparent text-sm md:text-base"
             />
             <FontAwesomeIcon
-              onClick={() => setShowPassword(!showPassword)}
-              className="fa-regular fa-eye-slash absolute right-4 cursor-pointer top-12"
               icon={showPassword ? faEyeSlash : faEye}
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-9 md:top-10 cursor-pointer text-gray-400"
             />
           </label>
-
-          <label className="flex gap-2 flex-col relative">
-            <div className="flex gap-2">
-              Konfirmasi Kata Sandi
-              <span className="text-red-400">{error}</span>
+          <label className="flex flex-col gap-1">
+            <div className="flex items-center gap-2">
+              <span className="text-sm md:text-base">
+                Konfirmasi Kata Sandi
+              </span>
+              {error && <span className="text-red-500 text-xs">{error}</span>}
             </div>
             <input
               ref={confirmPasswordRef}
               value={passwordConfirm}
               onChange={(e) => setPasswordConfirm(e.target.value)}
-              placeholder="Konfirmasi kata password"
+              placeholder="Konfirmasi password"
               type="password"
-              className="p-[10px] border-gray-500 border-2 rounded-full bg-transparent"
+              className="w-full p-2 md:p-3 border border-gray-500 rounded-full bg-transparent text-sm md:text-base"
             />
           </label>
         </div>
-
-        <div className="flex justify-between relative md:text-md text-sm -mt-[14px] mb-4">
-          <h1>
-            Sudah punya akun?
-            <Link to="/masuk" className="font-bold cursor-pointer hover:underline">
-              {" "}
+        <div className="text-xs md:text-sm -mt-2">
+          <p>
+            Sudah punya akun?{" "}
+            <Link to="/masuk" className="font-semibold hover:underline">
               Masuk
             </Link>
-          </h1>
+          </p>
         </div>
-
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <button
-            onClick={(e) => handleDaftarClick(e)}
             type="submit"
-            className="p-[6px] border-white w-full rounded-full cursor-pointer hover:underline bg-gray-500"
+            onClick={handleDaftarClick}
+            className="w-full py-2 bg-gray-600 hover:bg-gray-700 rounded-full text-sm md:text-base"
           >
             Daftar
           </button>
 
-          <p
-            className="text-gray-500 text-sm text-center"
-            style={{ lineHeight: "14px" }}
-          >
-            Atau
-          </p>
+          <p className="text-center text-gray-400 text-xs">Atau</p>
 
-          <button className="border-2 p-[6px] border-white w-full rounded-full cursor-pointer hover:underline">
-            <FontAwesomeIcon className="text-red-500 mr-2" icon={faGoogle} />
-            Masuk dengan Google
+          <button
+            type="button"
+            className="w-full py-2 border border-gray-400 hover:bg-gray-800 rounded-full flex items-center justify-center gap-2 text-sm md:text-base"
+          >
+            <FontAwesomeIcon icon={faGoogle} className="text-red-500" />
+            <span>Masuk dengan Google</span>
           </button>
         </div>
       </form>

@@ -1,7 +1,7 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { GenreButton } from "./genreButton";
+import { GenreButton } from "./GenreButton";
 
 export const ShowGenre = () => {
   const [rotateAngle, setRotateAngle] = useState(false);
