@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const FooterMobile = () => {
   return (
-    <div className="footer md:hidden  relative text-white pb-8 mb-0 border border-t-2 bg-black border-t-[#212121] flex-col p-[20px] flex gap-[40px]">
+    <div className="footer md:hidden relative border-black text-white pb-8 mb-0 border border-t-2 bg-black border-t-[#212121] flex-col p-[20px] flex gap-[40px]">
       <div className="ml-5 mt-5 ">
         <i className="fa-solid fa-film  text-6xl"></i>
         <span className="text-6xl font-[700]">CHILL</span>
