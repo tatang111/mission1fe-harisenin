@@ -30,3 +30,20 @@ build/
 # Python (jika ada)
 __pycache__/
 .vercel
+
+# node
+node_modules/
+dist/
+*.log
+
+# environment
+.env
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

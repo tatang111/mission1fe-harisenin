@@ -25,7 +25,7 @@ export const RightMainProfil = () => {
             <p className="text-gray-300">Berlaku hingga {expiryDate}</p>
         </div>
       ) : (
-        <div className="berlangganan bg-[#3D4142] text-white p-6 w-full md:w-[450px] h-[195px] md:h-[193px] rounded-2xl relative top-13 right-0 flex">
+        <div className="berlangganan bg-[#3D4142] text-white p-6 w-full md:w-[450px] h-[230px] md:h-[193px] rounded-2xl relative top-13 right-0 flex">
           <div className="gambar w-[82px] h-[82px] md:w-[95px] md:h-[78px]">
             <img src="/Warning.png" alt="" />
           </div>

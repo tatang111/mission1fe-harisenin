@@ -13,7 +13,7 @@ export const Masuk = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleMasukClick = (e) => {
     e.preventDefault();
@@ -23,18 +23,18 @@ export const Masuk = () => {
     if (infoUser.username !== username || infoUser.password !== password) {
       setUsername("");
       setPassword("");
-      setError("Username Atau Password Salah!")
+      setError("Username Atau Password Salah!");
       return;
     }
 
-    navigate("/beranda")
+    navigate("/beranda");
   };
 
   return (
-    <div className="forbglayar bg-[url(/auth/daftar.jpg)] flex justify-center pt-[1px] relative md:items-center h-screen">
+    <div className="forbglayar bg-[url(/auth/daftar.jpg)] md:py-10 py-6 relative md:flex justify-center h-screen">
       <form
         onSubmit={(e) => handleMasukClick(e)}
-        className="forForm w-90/100 max-w-[420px] overflow-y-hidden mt-[80px] md:mt-[0px] border border-[gray] md:h-89/100 h-60/100 top-20 md:top-0 relative p-[40px] pt-[28px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white"
+        className="forForm w-90/100 max-w-[420px] top-1/2 left-1/2 -translate-1/2 md:left-0 md:-translate-0  md:h-full overflow-y-hidden md:mt-[0px] border border-gray-500  p-[40px] pt-[20px] md:py-[30px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white md:top-0 relative"
       >
         <h1 className="text-center flex justify-center gap-1 text-4xl font-[700]">
           <FontAwesomeIcon icon={faFilm} />

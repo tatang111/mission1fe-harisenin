@@ -36,14 +36,14 @@ export const Daftar = () => {
   };
 
   return (
-    <div className="forbglayar bg-[url(/auth/daftar.jpg)] flex justify-center pt-[1px] relative md:items-center h-screen">
-      <form className="forForm w-90/100 max-w-[420px] overflow-y-hidden mt-[50px] md:mt-[0px] border border-gray-500 md:h-98/100 h-67/100 p-[40px] pt-[20px] md:pt-[13px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white top-25 md:top-0 relative">
-        <h1 className="text-center flex justify-center mt-4 gap-1 text-4xl font-bold">
+    <div className="forbglayar bg-[url(/auth/daftar.jpg)] py-6 relative md:flex justify-center h-screen">
+      <form className="forForm w-90/100 max-w-[420px] top-1/2 left-1/2 -translate-1/2 md:left-0 md:-translate-0  md:h-full overflow-y-hidden md:mt-[0px] border border-gray-500  p-[40px] pt-[20px] md:pt-[13px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white md:top-0 relative ">
+        <h1 className="text-center flex justify-center mt-1 gap-1 text-4xl font-bold">
           <FontAwesomeIcon icon={faFilm} />
           <span className="-pb-4 flex items-center -mt-1">CHILL</span>
         </h1>
 
-        <div className="text-center">
+        <div className="text-center -mt-2 -mb-4">
           <h1 className="text-2xl font-semibold">Daftar</h1>
           <h1>Selamat datang!</h1>
         </div>
@@ -104,7 +104,7 @@ export const Daftar = () => {
           </h1>
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 -mt-3">
           <button
             onClick={(e) => handleDaftarClick(e)}
             type="submit"
