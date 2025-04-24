@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const LeftDesktopFooter = () => {
   return (
-    <div className="relative pt-8">
+    <section className="relative pt-8">
       <span className="ml-2 fa-solid fa-film text-white relative bottom-1 text-3xl">
         <FontAwesomeIcon icon={faFilm} />
       </span>
@@ -11,6 +11,6 @@ export const LeftDesktopFooter = () => {
         CHILL
       </span>
       <p className="text-[gray] mt-2">@2023 Chill All Right Reserved.</p>
-    </div>
+    </section>
   );
 };

@@ -34,19 +34,16 @@ export const WatchSeries = () => {
     return saved ? JSON.parse(saved) : null
   })
 
-  // Hide controls after 3 seconds of inactivity
   const hideControls = () => {
     if (controlsTimeout) clearTimeout(controlsTimeout);
     setControlsTimeout(setTimeout(() => setShowControls(false), 3000));
   };
 
-  // Toggle controls on screen tap
   const handleScreenTap = () => {
     setShowControls(!showControls);
     hideControls();
   };
 
-  // Set up initial timeout and clean up
   useEffect(() => {
     hideControls();
     return () => {
@@ -55,7 +52,7 @@ export const WatchSeries = () => {
   }, []);
 
   return (
-    <div>
+    <main>
       <div
         className={`bg-[url('/tonton/tontonseries.png')] w-full h-screen bg-cover bg-center overflow-hidden fixed touch-none group ${
           isSubscribe ? "" : "brightness-45"
@@ -130,6 +127,6 @@ export const WatchSeries = () => {
           <VideoNonSubscribe />
         </div>
       )}
-    </div>
+    </main>
   );
 };

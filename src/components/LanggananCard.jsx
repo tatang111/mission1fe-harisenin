@@ -15,7 +15,7 @@ export const LanggananCard = ({versi, price, akun, kualitas}) => {
     }
 
   return (
-    <div className="bg-gradient-to-r rounded-lg  from-[#5370D4] to-[#192DB7] w-[270px] md:w-[236px] h-[410px] p-6 px-4 flex items-start  flex-col gap-6">
+    <section className="bg-gradient-to-r rounded-lg  from-[#5370D4] to-[#192DB7] w-[270px] md:w-[236px] h-[410px] p-6 px-4 flex items-start  flex-col gap-6">
       <button className="px-4 py-2 bg-[#3D4142] text-white rounded-full items-start flex font-[600]">
         {versi}
       </button>
@@ -41,6 +41,6 @@ export const LanggananCard = ({versi, price, akun, kualitas}) => {
       <p className="text-sm -mt-5 text-center w-full">
         Syarat dan Ketentuan Berlaku
       </p>
-    </div>
+    </section>
   );
 };

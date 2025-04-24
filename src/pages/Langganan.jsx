@@ -4,10 +4,10 @@ import { Navbar } from "../components/Navbar";
 
 export const Langganan = () => {
   return (
-    <div>
+    <main>
       <Navbar />
       <MainLangganan />
       <Footer />
-    </div>
+    </main>
   );
 };

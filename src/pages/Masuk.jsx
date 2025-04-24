@@ -31,57 +31,60 @@ export const Masuk = () => {
   };
 
   return (
-    <div className="forbglayar bg-[url(/auth/daftar.jpg)] md:py-10 py-6 relative md:flex justify-center h-screen">
+    <main className="forbglayar bg-[url(/auth/daftar.jpg)] md:py-10 py-6 relative md:flex justify-center h-screen">
       <form
         onSubmit={(e) => handleMasukClick(e)}
         className="forForm w-90/100 max-w-[420px] top-1/2 left-1/2 -translate-1/2 md:left-0 md:-translate-0  md:h-full overflow-y-hidden md:mt-[0px] border border-gray-500  p-[40px] pt-[20px] md:py-[30px] flex flex-col gap-[15px] rounded-md bg-[#181A1CD6] text-white md:top-0 relative"
       >
-        <h1 className="text-center flex justify-center gap-1 text-4xl font-[700]">
-          <FontAwesomeIcon icon={faFilm} />
-          <span className="-pb-4 flex items-center -mt-1">CHILL</span>
-        </h1>
+        <header className="grid gap-4">
+          <h1 className="text-center flex justify-center gap-1 text-4xl font-[700]">
+            <FontAwesomeIcon icon={faFilm} />
+            <span className="-pb-4 flex items-center -mt-1">CHILL</span>
+          </h1>
+          <div className="text-center">
+            <h1 className="text-2xl font-[650]">Masuk</h1>
+            <h1>Selamat datang kembali!</h1>
+          </div>
+        </header>
 
-        <div className="text-center">
-          <h1 className="text-2xl font-[650]">Masuk</h1>
-          <h1>Selamat datang kembali!</h1>
-        </div>
+        <section className="grid gap-4">
+          <div className="username">
+            <label className="flex gap-2 flex-col">
+              <div className="flex gap-2">
+                <span>Username</span>
+                <span className="text-red-500 ">{error}</span>
+              </div>
 
-        <div className="username">
-          <label className="flex gap-2 flex-col">
-            <div className="flex gap-2">
-              <span>Username</span>
-              <span className="text-red-500 ">{error}</span>
-            </div>
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Masukkan username"
+                type="text"
+                className="p-[10px] border-[gray] border-[2px] rounded-full bg-transparent"
+              />
+            </label>
+          </div>
 
-            <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Masukkan username"
-              type="text"
-              className="p-[10px] border-[gray] border-[2px] rounded-full bg-transparent"
-            />
-          </label>
-        </div>
+          <div className="password">
+            <label className="flex gap-2 flex-col relative">
+              Kata Sandi
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Masukkan kata sandi"
+                type={showPassword ? "text" : "password"}
+                className="p-[10px] border-[gray] border-[2px] rounded-full bg-transparent"
+              />
+              <FontAwesomeIcon
+                icon={showPassword ? faEyeSlash : faEye}
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 cursor-pointer top-12"
+              />
+            </label>
+          </div>
+        </section>
 
-        <div className="username">
-          <label className="flex gap-2 flex-col relative">
-            Kata Sandi
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Masukkan kata sandi"
-              type={showPassword ? "text" : "password"}
-              className="p-[10px] border-[gray] border-[2px] rounded-full bg-transparent"
-            />
-            <FontAwesomeIcon
-              icon={showPassword ? faEyeSlash : faEye}
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 cursor-pointer top-12"
-            />
-          </label>
-        </div>
-
-        <div className="flex justify-between relative md:text-md text-sm -mt-[14px] mb-4">
+        <section className="flex justify-between relative md:text-md text-sm -mt-[14px] mb-4">
           <h1>
             Belum punya akun?{" "}
             <Link
@@ -94,9 +97,9 @@ export const Masuk = () => {
           <h1 className="font-[600] hover:underline cursor-pointer">
             Lupa kata sandi?
           </h1>
-        </div>
+        </section>
 
-        <div className="flex flex-col gap-1">
+        <section className="flex flex-col gap-1">
           <button
             type="submit"
             onClick={(e) => handleMasukClick(e)}
@@ -114,8 +117,8 @@ export const Masuk = () => {
             <FontAwesomeIcon icon={faGoogle} className="text-red-500 mr-2" />
             Masuk dengan Google
           </button>
-        </div>
+        </section>
       </form>
-    </div>
+    </main>
   );
 };

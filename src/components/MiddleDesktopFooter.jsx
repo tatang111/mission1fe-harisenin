@@ -1,6 +1,6 @@
 export const MiddleDesktopFooter = () => {
   return (
-    <div className="">
+    <section className="">
       <h1 className="text-lg text-white">Genre</h1>
       <div className="flex text-[gray] gap-2">
         <div className="flex flex-col">
@@ -26,6 +26,6 @@ export const MiddleDesktopFooter = () => {
           <span>Thriller</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

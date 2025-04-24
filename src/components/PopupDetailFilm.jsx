@@ -38,11 +38,11 @@ export const PopupDetailFilm = ({ onClose }) => {
   if (loading) return <p>loading...</p>;
 
   return (
-    <div
+    <main
       ref={popupRef}
       className="bg-black pb-15 relative w-[953px] max-w-[85vw] flex flex-col gap-10 rounded-lg shadow-2xl"
     >
-      <div className="relative w-full h-[554px] object-cover ">
+      <header className="relative w-full h-[554px] object-cover ">
         <img className="w-full h-full object-cover" src={theMovie.src} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent "></div>
         <div className="w-full flex flex-col gap-6 text-white absolute bottom-0 md:bottom-20 md:px-20 px-5">
@@ -61,8 +61,8 @@ export const PopupDetailFilm = ({ onClose }) => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="text-white bg-black gap-2 md:px-20 pl-2 md:py-6 md:flex w-full">
+      </header>
+      <article className="text-white bg-black gap-2 md:px-20 pl-2 md:py-6 md:flex w-full">
         <div className=" md:w-1/2 pl-4 md:pl-0">
           <div className=" flex gap-4 text-gray-300 items-center">
             <h1>2023</h1>
@@ -101,8 +101,8 @@ export const PopupDetailFilm = ({ onClose }) => {
             <p className="text-white">James Gunn</p>
           </div>
         </div>
-      </div>
+      </article>
       <RekomendasiSerupa />
-    </div>
+    </main>
   );
 };

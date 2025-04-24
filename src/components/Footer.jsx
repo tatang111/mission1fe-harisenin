@@ -3,9 +3,9 @@ import { FooterMobile } from "./FooterMobile";
 
 export const Footer = () => {
   return (
-    <div>
+    <footer>
       <FooterDesktop />
       <FooterMobile />
-    </div>
+    </footer>
   );
 };

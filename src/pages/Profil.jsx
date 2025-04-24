@@ -5,18 +5,10 @@ import { PopupContext } from "../SharedContext";
 import { PopupDetailFilm } from "../components/PopupDetailFilm";
 
 export const Profil = () => {
-  const { detailClickingFilm, setDetailClickingFilm } = useContext(PopupContext);
-
   return (
-    <div>
-      <div
-        className={`bg-[var(--bg-color)] w-full text-[var(--text-color)] ${
-          detailClickingFilm ? "" : ""
-        } `}
-      >
+      <main className="bg-black text-white">
         <Navbar />
         <MainProfil />
-      </div>
-    </div>
+      </main>
   );
 };

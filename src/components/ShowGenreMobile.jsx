@@ -17,7 +17,7 @@ export const ShowGenreMobile = () => {
   };
 
   return (
-    <div className="relative block md:hidden">
+    <nav className="relative block md:hidden">
       <button
         onClick={handleGenreClick}
         className="flex gap-1 items-center px-2 py-2  rounded-lg"
@@ -99,6 +99,6 @@ export const ShowGenreMobile = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };

@@ -34,8 +34,8 @@ export const Navbar = ({ genre }) => {
   }
 
   return (
-    <div className="navbar w-full bg-black text-white md:h-18 px-2 md:px-14 py-4  items-center justify-between flex">
-      <div className="left-nav flex md:gap-8 items-center justify-center gap-2">
+    <nav className="navbar w-full bg-black text-white md:h-18 px-2 md:px-14 py-4  items-center justify-between flex">
+      <section className="left-nav flex md:gap-8 items-center justify-center gap-2">
         <div className="flex items-center gap-1 text-3xl font-[600]">
           <i className="fa-solid fa-film text-3xl">
             <FontAwesomeIcon icon={faFilm} />{" "}
@@ -61,8 +61,8 @@ export const Navbar = ({ genre }) => {
           Daftar Saya
         </Link>
         {genre && <ShowGenreMobile />}
-      </div>
-      <div className="right-nav relative  flex gap-4">
+      </section>
+      <section className="right-nav relative  flex gap-4">
         <div onClick={handleShowProfile} className="group relative flex gap-2">
           <div className="rounded-full  w-8 h-8 md:mt-[6px]">
             <img src="/profil.png" alt="" />
@@ -97,7 +97,7 @@ export const Navbar = ({ genre }) => {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </nav>
   );
 };

@@ -15,8 +15,8 @@ export const Series = () => {
   const { detailClickingSeries, setDetailClickingSeries } = useContext(PopupContext);
 
   return (
-    <div>
-      <div
+    <main>
+      <section
         className={`text-white relative w-full bg-black ${
           detailClickingSeries ? "brightness-35" : ""
         } `}
@@ -35,15 +35,15 @@ export const Series = () => {
           <TrendingFilmCard />
           <ReleaseFilmCard />
         </div>
-        <div className="md:mt-[70px] mt-[20px]">
+        <footer className="md:mt-[70px] mt-[20px]">
           <Footer />
-        </div>
-      </div>
+        </footer>
+      </section>
       {detailClickingSeries && (
-        <div className="absolute z-50 top-[350px] md:top-[520px]  left-1/2 -translate-x-1/2 flex  md:items-center justify-center">
+        <article className="absolute z-50 top-[350px] md:top-[520px]  left-1/2 -translate-x-1/2 flex  md:items-center justify-center">
           <PopupDetailSeries onClose={() => setDetailClickingSeries(false)} />
-        </div>
+        </article>
       )}
-    </div>
+    </main>
   );
 };

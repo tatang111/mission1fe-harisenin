@@ -37,15 +37,15 @@ export const PopupDetailSeries = ({ onClose }) => {
   if (loading) return <p>loading...</p>;
 
   return (
-    <div
+    <article
       ref={popupRef}
       className="bg-black relative w-[953px] max-w-[85vw]  flex flex-col gap-10 rounded-lg shadow-2xl"
     >
-      <div className="relative w-full h-[554px] object-cover ">
+      <header className="relative w-full h-[554px] object-cover ">
         <img className="w-full h-full object-cover" src={theMovie.src} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent "></div>
         <div className="w-full flex flex-col gap-6 text-white absolute bottom-0 md:bottom-20 md:px-20 px-5">
-          <h1 className="text-3xl font-[600]">Ted Lasso</h1>
+          <h2 className="text-3xl font-[600]">Ted Lasso</h2>
           <div className="flex justify-between">
             <div className="flex gap-4 items-center">
               <button onClick={handleClickMulai} className="px-6 py-2 bg-blue-700 hover:bg-blue-500 rounded-full cursor-pointer">
@@ -60,8 +60,8 @@ export const PopupDetailSeries = ({ onClose }) => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="text-white bg-black gap-2 md:px-20 pl-2 md:py-6 md:flex w-full">
+      </header>
+      <section className="text-white bg-black gap-2 md:px-20 pl-2 md:py-6 md:flex w-full">
         <div className=" md:w-1/2 pl-4 md:pl-0">
           <div className=" flex gap-4 text-gray-300 items-center">
             <h1>2020</h1>
@@ -102,8 +102,8 @@ export const PopupDetailSeries = ({ onClose }) => {
             <p className="text-white">Brendan Hunt, Joe Killy, Bill Lawrence</p>
           </div>
         </div>
-      </div>
+      </section>
       <PopupEpisodes />
-    </div>
+    </article>
   );
 };

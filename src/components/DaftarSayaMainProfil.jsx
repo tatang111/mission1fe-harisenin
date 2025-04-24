@@ -4,7 +4,7 @@ import { TopTen } from "./TopTen";
 
 export const DaftarSayaMainProfil = () => {
   return (
-    <div className="md:px-20 px-5 flex flex-col gap-8">
+    <section className="md:px-20 px-5 flex flex-col gap-8">
       <div className="w-full flex justify-between">
         <span className="text-3xl font-[600]">Daftar Saya</span>
         <Link to="/daftarsaya" className="cursor-pointer hover:underline">Lihat Semua</Link>
@@ -41,6 +41,6 @@ export const DaftarSayaMainProfil = () => {
           info={<TopTen />}
         />
       </div>
-    </div>
+    </section>
   );
 };

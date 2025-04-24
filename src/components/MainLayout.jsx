@@ -9,7 +9,7 @@ import { ShowGenre } from "./ShowGenre";
 
 export const MainLayout = ({ src, title, desc, genre }) => {
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+    <main className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
       <img
         className="w-full h-full object-cover hero-image "
         src={src}
@@ -18,7 +18,7 @@ export const MainLayout = ({ src, title, desc, genre }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
       {genre && <ShowGenre />}
       {/* title and desc */}
-      <div className="absolute left-0 bottom-0  px-4 md:px-12 py-8 flex flex-col gap-4 w-full">
+      <article className="absolute left-0 bottom-0  px-4 md:px-12 py-8 flex flex-col gap-4 w-full">
         <h1 className="text-3xl md:text-5xl font-bold text-white [text-shadow:_0_2px_8px_rgb(0_0_0_/_80%)]">
           {title}
         </h1>
@@ -47,7 +47,7 @@ export const MainLayout = ({ src, title, desc, genre }) => {
             </i>
           </button>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
   );
 };

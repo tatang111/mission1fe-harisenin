@@ -14,13 +14,13 @@ export const MainLangganan = () => {
   const { versiPembayaran, setVersiPembayaran } = useContext(PopupContext);
 
   return (
-    <div className="bg-black text-white">
+    <main className="bg-black text-white">
         {versiPembayaran == "Individual" && <ShowIndividual />}
         {versiPembayaran == "Berdua" && <ShowBerdua />}
         {versiPembayaran == "Keluarga" && <ShowKeluarga />}
         {versiPembayaran == "visa" && <ShowPayment /> || versiPembayaran == "bca" && <ShowPayment />}
       {!versiPembayaran && (
-        <div>
+        <section>
           <div className="relative top-[0] md:top-[50px] py-10 px-12 md:px-20 pb-20 md:pb-40 ">
             <h1 className="text-center text-2xl font-[600] mb-8 md:mb-10">
               Kenapa Harus Berlangganan ?
@@ -53,8 +53,8 @@ export const MainLangganan = () => {
               />
             </div>
           </div>
-        </div>
+        </section>
       )}
-    </div>
+    </main>
   );
 };
