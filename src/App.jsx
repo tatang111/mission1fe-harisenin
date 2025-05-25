@@ -15,7 +15,7 @@ function App() {
   return (
     <PopupProvider>
       <Routes>
-        <Route path="/" element={<Daftar />} />
+        <Route index element={<Daftar />} />
         <Route path="/masuk" element={<Masuk />} />
         <Route path="/beranda" element={<MainPage />} />
         <Route path="/profil" element={<Profil />} />
