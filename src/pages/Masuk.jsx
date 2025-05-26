@@ -88,7 +88,7 @@ export const Masuk = () => {
           <h1>
             Belum punya akun?{" "}
             <Link
-              to="/daftar"
+              to="/"
               className="font-bold cursor-pointer hover:underline"
             >
               Daftar
